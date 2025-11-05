@@ -145,9 +145,13 @@ a:focus {
   border-radius: 14px;
   padding: 1.25rem 1.4rem;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
 }
 .gp-card-media {
-  margin-top: 1rem;
+  margin: 0;
   border-radius: 12px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.25);
@@ -160,6 +164,15 @@ a:focus {
   display: block;
   aspect-ratio: 16 / 9;
   background: #000;
+}
+.gp-card-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.gp-card-footer .gp-btn {
+  align-self: flex-start;
 }
 
 .gp-card h3 {
