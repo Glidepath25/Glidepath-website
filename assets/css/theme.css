@@ -783,7 +783,7 @@ select:focus {
 .blog-card { background: rgba(21,23,26,0.85); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:1rem; }
 .blog-card h3{ margin:.2rem 0 .5rem 0; }
 .blog-card .meta{ font-size:.8rem; color: var(--muted); margin-bottom:.4rem; }
-.blog-card-image{ margin-bottom:.75rem; border-radius:10px; overflow:hidden; }
+.blog-card-image{ margin:0 auto .75rem auto; border-radius:10px; overflow:hidden; width:100%; max-width:100%; display:block; }
 .blog-card-image img{ width:100%; height:auto; display:block; object-fit:cover; }
 .blog-card-summary p{ margin:0 0 .75rem 0; line-height:1.5; }
 .blog-card-summary p:last-child{ margin-bottom:0; }

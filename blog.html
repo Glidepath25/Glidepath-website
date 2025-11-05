@@ -58,13 +58,26 @@
       }).join('');
     };
 
+    const getImageWidthStyle = (value) => {
+      const parsed = parseInt(value, 10);
+      if (Number.isNaN(parsed)) return '';
+      const clamped = Math.min(Math.max(parsed, 10), 100);
+      return ` style="width:${clamped}%;"`;
+    };
+
+    const buildImageMarkup = (post) => {
+      if (!post.image) return '';
+      const widthStyle = getImageWidthStyle(post.image_width);
+      return `<div class="blog-card-image"${widthStyle}><img src="${escapeAttr(post.image)}" alt="${escapeAttr(post.title || 'Update image')}"></div>`;
+    };
+
     fetch('/content/posts.json').then(r=>r.json()).then(data=>{
       const wrap = document.getElementById('posts');
       data.posts.forEach(p=>{
         const el = document.createElement('article');
         el.className = 'blog-card';
         const summaryMarkup = formatSummary(p.summary || '');
-        const imageMarkup = p.image ? `<div class="blog-card-image"><img src="${escapeAttr(p.image)}" alt="${escapeAttr(p.title || 'Update image')}"></div>` : '';
+        const imageMarkup = buildImageMarkup(p);
         el.innerHTML = `${imageMarkup}
                         <div class="meta">${new Date(p.date).toLocaleDateString()}</div>
                         <h3>${escapeHtml(p.title)}</h3>
