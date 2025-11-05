@@ -24,4 +24,5 @@ collections:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Date", name: "date", widget: "datetime"}
               - {label: "Summary", name: "summary", widget: "text"}
+              - {label: "Image", name: "image", widget: "image", choose_url: false}
               - {label: "LinkedIn or URL", name: "link", widget: "string"}
