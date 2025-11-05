@@ -146,6 +146,18 @@ a:focus {
   padding: 1.25rem 1.4rem;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
 }
+.gp-card-video-wrap {
+  margin-top: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+}
+.gp-card-video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
 
 .gp-card h3 {
   margin-top: 0;
