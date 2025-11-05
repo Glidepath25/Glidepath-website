@@ -40,17 +40,38 @@
     
   </div>
   <script>
+    const escapeHtml = (str = '') => str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+
+    const escapeAttr = (str = '') => escapeHtml(str).replace(/&#39;/g, '&#39;');
+
+    const formatSummary = (summary = '') => {
+      if (!summary.trim()) return '';
+      const paragraphs = summary.trim().split(/\r?\n\s*\r?\n/);
+      return paragraphs.map(para => {
+        const lines = para.split(/\r?\n/).map(line => escapeHtml(line));
+        return `<p>${lines.join('<br>')}</p>`;
+      }).join('');
+    };
+
     fetch('/content/posts.json').then(r=>r.json()).then(data=>{
       const wrap = document.getElementById('posts');
       data.posts.forEach(p=>{
         const el = document.createElement('article');
         el.className = 'blog-card';
-        el.innerHTML = `<div class="meta">${new Date(p.date).toLocaleDateString()}</div>
-                        <h3>${p.title}</h3>
-                        <p>${p.summary}</p>
+        const summaryMarkup = formatSummary(p.summary || '');
+        const imageMarkup = p.image ? `<div class="blog-card-image"><img src="${escapeAttr(p.image)}" alt="${escapeAttr(p.title || 'Update image')}"></div>` : '';
+        el.innerHTML = `${imageMarkup}
+                        <div class="meta">${new Date(p.date).toLocaleDateString()}</div>
+                        <h3>${escapeHtml(p.title)}</h3>
+                        ${summaryMarkup ? `<div class="blog-card-summary">${summaryMarkup}</div>` : ''}
                         <div class="gp-section-footer">
                           <span></span>
-                          <a class="gp-btn gp-btn-outline" href="${p.link}" target="_blank" rel="noopener">Open on LinkedIn</a>
+                          <a class="gp-btn gp-btn-outline" href="${escapeAttr(p.link)}" target="_blank" rel="noopener">Open on LinkedIn</a>
                         </div>`;
         wrap.appendChild(el);
       });
