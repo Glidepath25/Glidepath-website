@@ -146,14 +146,17 @@ a:focus {
   padding: 1.25rem 1.4rem;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
 }
-.gp-card-video-wrap {
+.gp-card-media {
   margin-top: 1rem;
   border-radius: 12px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
 }
 .gp-card-video {
   width: 100%;
+  max-width: 640px;
   display: block;
   aspect-ratio: 16 / 9;
   background: #000;
