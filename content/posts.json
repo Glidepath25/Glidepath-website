@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "title": "Glidepath v1: Operational management made simple",
+      "date": "2025-10-01",
+      "summary": "We\u2019ve consolidated permit, field coordination and reporting into one streamlined hub.",
+      "link": "https://www.linkedin.com/"
+    },
+    {
+      "title": "GeoProx: SWUK-aligned desktop assessments in seconds",
+      "date": "2025-10-10",
+      "summary": "Run proximity checks with audit-ready outputs and GIS overlays.",
+      "link": "https://www.linkedin.com/"
+    }
+  ]
+}

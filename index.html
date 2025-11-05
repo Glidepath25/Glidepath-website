@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glidepath Solutions — Consultancy & Software for Utilities Delivery</title>
+  <meta name="description" content="Delivering smarter networks through consultancy and software innovation.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+</head>
+<body>
+  <div class="gp-app">
+    
+    <header class="gp-header header-compact">
+      <div class="gp-header-title brand-logo">
+        <img src="/assets/img/uploads/logo.png" alt="Glidepath logo" style="width:36px;height:36px;border-radius:8px;object-fit:cover;">
+        <span>Glidepath Solutions</span>
+      </div>
+      <nav class="gp-nav">
+        <a href="/#services">Our services</a>
+        <a href="/services.html">Consultancy & Software</a>
+        <a href="/blog.html">Updates</a>
+        <a href="/#contact" class="gp-btn">Get in touch today</a>
+      </nav>
+    </header>
+    
+    <main class="gp-main">
+      <section class="gp-section gp-hero">
+        <div class="gp-toolbar">
+          <div>
+            <div class="gp-burst">Utilities specialists</div>
+            <h1 style="margin:.35rem 0 0 0;">Delivering smarter networks through consultancy and software innovation.</h1>
+            <p class="gp-muted">We unite delivery expertise with intelligent platforms to streamline governance, reporting and operations.</p>
+            <div class="hero-actions">
+              <a class="gp-btn" href="#services">Explore services</a>
+              <a class="gp-btn gp-btn-outline" href="mailto:admin@glidepathsolutions.co.uk">Get in touch today</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="gp-section headerless">
+        <h2>Our services</h2>
+        <div class="gp-grid cols-2 fade-in" id="servicesGrid">
+          <article class="gp-card feature-card">
+            <h3>Consultancy for Utilities Contractors & ISPs</h3>
+            <p>Programme & project management, tender scheduling, resource modelling, TOM design, risk & mitigations, and deployment advisory.</p>
+            <img src="https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1200&auto=format&fit=crop" alt="FTTP deployment crew (stock)">
+            <div class="gp-section-footer"><span>Delivery leadership for network build programmes.</span><a class="gp-link" href="/services.html#consulting">Learn more</a></div>
+          </article>
+          <article class="gp-card feature-card">
+            <h3>Software Products</h3>
+            <p><strong>Glidepath</strong> — Operational management platform.<br><strong>GeoProx</strong> — SWUK risk assessment platform for proximity & site assessments.</p>
+            <img src="https://images.unsplash.com/photo-1538688423619-a81d3f23454b?q=80&w=1200&auto=format&fit=crop" alt="Operations dashboard (stock)">
+            <div class="gp-section-footer"><span>Automate governance, reporting and compliance.</span><a class="gp-link" href="/services.html#software">Explore products</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="gp-section headerless">
+        <h2>Latest updates</h2>
+        <div id="blogGrid" class="blog-grid"></div>
+        <div class="gp-section-footer">
+          <span>Publishing wins, releases and insights to help delivery teams.</span>
+          <a class="gp-link" href="/blog.html">View all updates</a>
+        </div>
+      </section>
+
+      <section id="contact" class="gp-section">
+        <header class="gp-section-header"><div><h2>Get in touch today</h2><p class="gp-muted">Tell us about your programme — we’ll respond quickly.</p></div></header>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="gp-form gp-form-grid" id="contactForm" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+          <div class="gp-form-group"><label for="c-name">Name</label><input id="c-name" name="name" type="text" required></div>
+          <div class="gp-form-group"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required></div>
+          <div class="gp-form-group"><label for="c-company">Company</label><input id="c-company" name="company" type="text"></div>
+          <div class="gp-form-group"><label for="c-message">Message</label><textarea id="c-message" name="message" rows="4" placeholder="How can we help?"></textarea></div>
+          <div class="gp-form-actions">
+            <button class="gp-btn" type="submit">Send message</button>
+            <a class="gp-btn gp-btn-outline" href="mailto:admin@glidepathsolutions.co.uk">Or email us directly</a>
+          </div>
+        </form>
+      </section>
+    </main>
+    
+    <footer class="gp-footer">
+      © 2025 Glidepath Solutions · <a class="gp-link" href="mailto:admin@glidepathsolutions.co.uk">admin@glidepathsolutions.co.uk</a>
+    </footer>
+    
+  </div>
+
+  <!-- Hidden dummy forms -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name"><input type="email" name="email"><textarea name="message"></textarea>
+  </form>
+  <form name="demo" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name"><input type="email" name="email"><textarea name="message"></textarea>
+  </form>
+
+  <script>
+  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');})});
+  document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+  fetch('/content/posts.json').then(r=>r.json()).then(data => {
+    const container = document.getElementById('blogGrid');
+    data.posts.slice(0,3).forEach(p => {
+      const card = document.createElement('article');
+      card.className = 'blog-card';
+      card.innerHTML = `<div class="meta">${new Date(p.date).toLocaleDateString()}</div>
+                        <h3>${p.title}</h3>
+                        <p>${p.summary}</p>
+                        <div class="gp-section-footer"><span></span>
+                          <a class="gp-link" href="${p.link}" target="_blank" rel="noopener">Open on LinkedIn</a>
+                        </div>`;
+      container.appendChild(card);
+    });
+  }).catch(()=>{});
+  </script>
+</body>
+</html>

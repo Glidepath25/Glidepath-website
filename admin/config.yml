@@ -1,0 +1,27 @@
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+collections:
+  - name: "updates"
+    label: "Updates / Blog"
+    label_singular: "Update"
+    files:
+      - name: "posts"
+        label: "Posts List"
+        file: "content/posts.json"
+        description: "List of update cards displayed on the site."
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Date", name: "date", widget: "datetime"}
+              - {label: "Summary", name: "summary", widget: "text"}
+              - {label: "LinkedIn or URL", name: "link", widget: "string"}

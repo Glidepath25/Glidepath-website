@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Updates — Glidepath Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+</head>
+<body>
+  <div class="gp-app">
+    
+    <header class="gp-header header-compact">
+      <div class="gp-header-title brand-logo">
+        <img src="/assets/img/uploads/logo.png" alt="Glidepath logo" style="width:36px;height:36px;border-radius:8px;object-fit:cover;">
+        <span>Glidepath Solutions</span>
+      </div>
+      <nav class="gp-nav">
+        <a href="/#services">Our services</a>
+        <a href="/services.html">Consultancy & Software</a>
+        <a href="/blog.html">Updates</a>
+        <a href="/#contact" class="gp-btn">Get in touch today</a>
+      </nav>
+    </header>
+    
+    <main class="gp-main">
+      <section class="gp-section gp-hero">
+        <h1>Latest updates</h1>
+        <p class="gp-muted">Blog posts, LinkedIn articles and release notes. Add or edit via Netlify CMS.</p>
+      </section>
+
+      <section class="gp-section headerless">
+        <div id="posts" class="blog-grid"></div>
+      </section>
+    </main>
+    
+    <footer class="gp-footer">
+      © 2025 Glidepath Solutions · <a class="gp-link" href="mailto:admin@glidepathsolutions.co.uk">admin@glidepathsolutions.co.uk</a>
+    </footer>
+    
+  </div>
+  <script>
+    fetch('/content/posts.json').then(r=>r.json()).then(data=>{
+      const wrap = document.getElementById('posts');
+      data.posts.forEach(p=>{
+        const el = document.createElement('article');
+        el.className = 'blog-card';
+        el.innerHTML = `<div class="meta">${new Date(p.date).toLocaleDateString()}</div>
+                        <h3>${p.title}</h3>
+                        <p>${p.summary}</p>
+                        <div class="gp-section-footer">
+                          <span></span>
+                          <a class="gp-btn gp-btn-outline" href="${p.link}" target="_blank" rel="noopener">Open on LinkedIn</a>
+                        </div>`;
+        wrap.appendChild(el);
+      });
+    }).catch(()=>{document.getElementById('posts').innerHTML='<p class="gp-muted">No posts yet. Use the CMS to add your first update.</p>';});
+  </script>
+</body>
+</html>
