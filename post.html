@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Update | Glidepath Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/theme.css">
+</head>
+<body>
+  <div class="gp-app">
+    <header class="gp-header header-compact">
+      <a href="/" class="gp-header-title brand-logo">
+        <img src="/assets/img/uploads/logo.png" alt="Glidepath logo" style="width:36px;height:36px;border-radius:8px;object-fit:cover;">
+        <span>Glidepath Solutions</span>
+      </a>
+      <nav class="gp-nav">
+        <a href="/#services">Our services</a>
+        <a href="/services.html">Consultancy & Software</a>
+        <a href="/blog.html">Updates</a>
+        <a href="/#contact" class="gp-btn">Get in touch today</a>
+      </nav>
+    </header>
+
+    <main class="gp-main">
+      <section class="gp-section gp-hero">
+        <h1 id="postTitle">Update</h1>
+        <p class="gp-muted" id="postMeta"></p>
+      </section>
+
+      <section class="gp-section headerless">
+        <article class="gp-card" id="postBody">
+          <p class="gp-muted">Loading…</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="gp-footer">
+      &copy; 2025 Glidepath Solutions <a class="gp-link" href="mailto:admin@glidepathsolutions.co.uk">admin@glidepathsolutions.co.uk</a> | <a class="gp-link" href="/privacy-policy/">Privacy Policy</a>
+    </footer>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const slugParam = params.get('slug') || '';
+
+    const escapeHtml = (str = '') => str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+
+    const escapeAttr = (str = '') => escapeHtml(str).replace(/&#39;/g, '&#39;');
+
+    const slugify = (str = '') => (str || '').toLowerCase().trim()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      || 'post';
+
+    const formatSummary = (summary = '') => {
+      if (!summary.trim()) return '';
+      const paragraphs = summary.trim().split(/\r?\n\s*\r?\n/);
+      return paragraphs.map(para => {
+        const lines = para.split(/\r?\n/).map(line => escapeHtml(line));
+        return `<p>${lines.join('<br>')}</p>`;
+      }).join('');
+    };
+
+    const renderPost = (post = {}) => {
+      const title = escapeHtml(post.title || 'Update');
+      document.getElementById('postTitle').innerHTML = title;
+      document.title = `${post.title || 'Update'} | Glidepath Solutions`;
+
+      const dateText = post.date ? new Date(post.date).toLocaleDateString() : '';
+      const meta = [];
+      if (dateText) meta.push(dateText);
+      if (post.link) meta.push(`<a class="gp-link" href="${escapeAttr(post.link)}" target="_blank" rel="noopener">View on LinkedIn</a>`);
+      document.getElementById('postMeta').innerHTML = meta.join(' · ');
+
+      const summaryMarkup = formatSummary(post.summary || '');
+      const imageMarkup = post.image ? `<div class="blog-card-image"><img src="${escapeAttr(post.image)}" alt="${title}"></div>` : '';
+      document.getElementById('postBody').innerHTML = `${imageMarkup}${summaryMarkup || '<p class="gp-muted">No content provided.</p>'}
+        <div class="gp-section-footer">
+          <span></span>
+          <a class="gp-btn gp-btn-outline" href="/blog.html">Back to updates</a>
+          ${post.link ? `<a class="gp-btn" href="${escapeAttr(post.link)}" target="_blank" rel="noopener">View on LinkedIn</a>` : ''}
+        </div>`;
+    };
+
+    fetch('/content/posts.json').then(r => r.json()).then(data => {
+      const posts = data.posts || [];
+      const match = posts.find(p => (p.slug || slugify(p.title || '')).toLowerCase() === slugParam.toLowerCase());
+      if (match) {
+        renderPost(match);
+      } else {
+        document.getElementById('postBody').innerHTML = '<p class="gp-muted">Post not found. <a class="gp-link" href="/blog.html">Back to updates.</a></p>';
+      }
+    }).catch(() => {
+      document.getElementById('postBody').innerHTML = '<p class="gp-muted">Unable to load posts right now.</p>';
+    });
+  </script>
+</body>
+</html>

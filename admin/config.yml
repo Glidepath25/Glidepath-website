@@ -22,6 +22,7 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - {label: "Title", name: "title", widget: "string"}
+              - {label: "Slug", name: "slug", widget: "string", hint: "Unique short ID for the URL, e.g. built-for-utilities", pattern: ["^[a-z0-9]+[a-z0-9-]*$", "Use lowercase letters, numbers and hyphens only."]}
               - {label: "Date", name: "date", widget: "datetime"}
               - {label: "Summary", name: "summary", widget: "text"}
               - {label: "Image", name: "image", widget: "image", choose_url: false, required: false}

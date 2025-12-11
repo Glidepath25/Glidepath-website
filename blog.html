@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Updates — Glidepath Solutions</title>
+    <title>Updates | Glidepath Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/theme.css">
 </head>
@@ -34,8 +34,8 @@
       </section>
     </main>
     
-    <footer class="gp-footer">
-      © 2025 Glidepath Solutions · <a class="gp-link" href="mailto:admin@glidepathsolutions.co.uk">admin@glidepathsolutions.co.uk</a>
+        <footer class="gp-footer">
+      &copy; 2025 Glidepath Solutions <a class="gp-link" href="mailto:admin@glidepathsolutions.co.uk">admin@glidepathsolutions.co.uk</a> | <a class="gp-link" href="/privacy-policy/">Privacy Policy</a>
     </footer>
     
   </div>
@@ -71,20 +71,27 @@
       return `<div class="blog-card-image"${widthStyle}><img src="${escapeAttr(post.image)}" alt="${escapeAttr(post.title || 'Update image')}"></div>`;
     };
 
+    const slugify = (str = '') => (str || '').toLowerCase().trim()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      || 'post';
+
     fetch('/content/posts.json').then(r=>r.json()).then(data=>{
       const wrap = document.getElementById('posts');
       data.posts.forEach(p=>{
         const el = document.createElement('article');
         el.className = 'blog-card';
         const summaryMarkup = formatSummary(p.summary || '');
+        const slug = escapeAttr(p.slug || slugify(p.title || 'post'));
         const imageMarkup = buildImageMarkup(p);
         el.innerHTML = `${imageMarkup}
                         <div class="meta">${new Date(p.date).toLocaleDateString()}</div>
-                        <h3>${escapeHtml(p.title)}</h3>
+                        <h3><a class="gp-link" href="/post.html?slug=${slug}">${escapeHtml(p.title)}</a></h3>
                         ${summaryMarkup ? `<div class="blog-card-summary">${summaryMarkup}</div>` : ''}
                         <div class="gp-section-footer">
                           <span></span>
-                          <a class="gp-btn gp-btn-outline" href="${escapeAttr(p.link)}" target="_blank" rel="noopener">Open on LinkedIn</a>
+                          <a class="gp-btn" href="/post.html?slug=${slug}">Read on site</a>
+                          ${p.link ? `<a class="gp-btn gp-btn-outline" href="${escapeAttr(p.link)}" target="_blank" rel="noopener">View on LinkedIn</a>` : ''}
                         </div>`;
         wrap.appendChild(el);
       });

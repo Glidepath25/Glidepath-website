@@ -135,6 +135,11 @@
 
   const escapeAttr = (str = '') => escapeHtml(str).replace(/&#39;/g, '&#39;');
 
+  const slugify = (str = '') => (str || '').toLowerCase().trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    || 'post';
+
   const formatSummary = (summary = '') => {
     if (!summary.trim()) return '';
     const paragraphs = summary.trim().split(/\r?\n\s*\r?\n/);
@@ -164,12 +169,14 @@
       card.className = 'blog-card';
       const summaryMarkup = formatSummary(p.summary || '');
       const imageMarkup = buildImageMarkup(p);
+      const slug = escapeAttr(p.slug || slugify(p.title || 'post'));
       card.innerHTML = `${imageMarkup}
                         <div class="meta">${new Date(p.date).toLocaleDateString()}</div>
-                        <h3>${escapeHtml(p.title)}</h3>
+                        <h3><a class="gp-link" href="/post.html?slug=${slug}">${escapeHtml(p.title)}</a></h3>
                         ${summaryMarkup ? `<div class="blog-card-summary">${summaryMarkup}</div>` : ''}
                         <div class="gp-section-footer"><span></span>
-                          <a class="gp-link" href="${escapeAttr(p.link)}" target="_blank" rel="noopener">Open on LinkedIn</a>
+                          <a class="gp-btn" href="/post.html?slug=${slug}">Read on site</a>
+                          ${p.link ? `<a class="gp-btn gp-btn-outline" href="${escapeAttr(p.link)}" target="_blank" rel="noopener">View on LinkedIn</a>` : ''}
                         </div>`;
       container.appendChild(card);
     });
