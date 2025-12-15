@@ -1,4 +1,4 @@
-
+﻿
 :root {
   color-scheme: light;
   --primary-yellow: #f6a800;
@@ -108,7 +108,7 @@ a:focus {
 }
 
 .gp-section {
-  background: var(--panel-grey);
+  background: var(--panel-grey);\n  color: var(--text);
   border-radius: 16px;
   padding: clamp(1.25rem, 2vw, 2rem);
   border: 1px solid rgba(0, 0, 0, 0.04);
@@ -123,7 +123,7 @@ a:focus {
 .gp-section h2,
 .gp-section h3 {
   margin-top: 0;
-  color: var(--white);
+  color: var(--text);
 }
 
 .gp-grid {
@@ -140,11 +140,12 @@ a:focus {
 }
 
 .gp-card {
-  background: rgba(21, 23, 26, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #ffffff;
+  color: var(--text);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 14px;
   padding: 1.25rem 1.4rem;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -154,7 +155,7 @@ a:focus {
   margin: 0;
   border-radius: 12px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.08);
   display: flex;
   justify-content: center;
 }
@@ -280,8 +281,8 @@ select {
   width: 100%;
   padding: 0.65rem 0.75rem;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(12, 14, 18, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #ffffff;
   color: var(--text);
   font-size: 0.95rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -306,27 +307,28 @@ select:focus {
   border-collapse: collapse;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
 }
 
 .gp-table thead {
-  background: rgba(18, 20, 24, 0.9);
+  background: #f1f4f9;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.7rem;
-  color: var(--muted);
+  color: #4a5161;
 }
 
 .gp-table th,
 .gp-table td {
   padding: 0.75rem 0.9rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   text-align: left;
   vertical-align: top;
 }
 
 .gp-table tr:nth-child(even) td {
-  background: rgba(255, 255, 255, 0.02);
+  background: #f9fbff;
 }
 
 .gp-table tr:hover td {
@@ -542,7 +544,7 @@ select:focus {
 .gp-flash {
   padding: 0.85rem 1rem;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background: rgba(255, 255, 255, 0.04);
   font-size: 0.95rem;
 }
@@ -730,7 +732,7 @@ select:focus {
 .demo-map {
   height: 260px;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background:
     radial-gradient(circle at 20% 30%, rgba(43, 124, 255, 0.45), transparent 55%),
     radial-gradient(circle at 80% 60%, rgba(251, 183, 20, 0.35), transparent 60%),
