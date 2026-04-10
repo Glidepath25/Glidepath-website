@@ -504,6 +504,10 @@ textarea {
   border-color: rgba(255, 245, 223, 0.16);
 }
 
+.hero-panel h2 {
+  margin-bottom: 1rem;
+}
+
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(120px, 1fr));
