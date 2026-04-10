@@ -1,20 +1,20 @@
 {
   "hero": {
-    "eyebrow": "Advisory and software for utility delivery",
-    "title": "Clarity for complex programmes, from mobilisation to live operations.",
-    "summary": "Glidepath combines delivery consultancy with practical software products for telecoms and utility contractors. We help teams plan, control and improve network build programmes without adding management overhead.",
-    "primary_label": "Start a conversation",
-    "primary_href": "#contact",
-    "secondary_label": "View consultancy and software",
-    "secondary_href": "/services.html",
-    "panel_label": "Where we help",
-    "panel_title": "Built for regulated, delivery-heavy environments.",
-    "panel_body": "Use Glidepath when programme teams need stronger governance, cleaner reporting, sharper operational visibility and more reliable execution across fibre and utility works.",
     "checklist": [
       "Programme mobilisation and operating model support",
       "Reporting, assurance and risk control for live delivery",
       "Practical systems that replace spreadsheets and disconnected workflows"
     ],
+    "summary": "Glidepath combines delivery consultancy with practical software products for telecoms and utility contractors. We help teams plan, control and improve network build programmes without adding management overhead.",
+    "primary_href": "#contact",
+    "secondary_label": "View consultancy and software",
+    "eyebrow": "Advisory and software for utility delivery",
+    "secondary_href": "/services.html",
+    "primary_label": "Start a conversation",
+    "title": "Clarity for complex programmes, from mobilisation to live operations.",
+    "panel_label": "Where we help",
+    "panel_title": "Built for regulated, delivery-heavy environments.",
+    "panel_body": "Glidepath supports operators, investors, and program leaders at the point where fiber deployment becomes real; establishing the structure, processes and controls required to deliver at scale.",
     "stats": [
       {
         "value": "Fibre",
@@ -102,8 +102,8 @@
         "attribution": "Operations and governance perspective"
       },
       {
-        "quote": "The messaging now reads more like an established advisory business: clearer capability areas, better section hierarchy and stronger calls to action.",
-        "attribution": "Website positioning perspective"
+        "quote": "Independent oversight, delivery assurance and data-driven insight; ensuring programs scale predictably, efficiently and on schedule.",
+        "attribution": "DATA DRIVEN DECISION MAKING"
       }
     ]
   },
