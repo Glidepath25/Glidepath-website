@@ -261,18 +261,20 @@ textarea {
 .overview-graphic {
   width: min(100%, 34rem);
   height: auto;
-  margin-top: 1.25rem;
+  margin-top: auto;
 }
 
 .overview-section-layout {
   display: grid;
   grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
-  align-items: start;
+  align-items: stretch;
   gap: 2rem;
 }
 
 .overview-column {
-  max-width: 34rem;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .overview-layout {
@@ -280,11 +282,11 @@ textarea {
 }
 
 .overview-layout > div {
-  max-width: 24rem;
+  max-width: 32rem;
 }
 
 .overview-layout h2 {
-  max-width: 8ch;
+  max-width: 11ch;
 }
 
 .gp-link,
