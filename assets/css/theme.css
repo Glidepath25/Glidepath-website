@@ -203,7 +203,7 @@ textarea {
 
 .gp-section h1 {
   font-size: clamp(2.7rem, 6vw, 5.3rem);
-  max-width: 12ch;
+  max-width: 15ch;
 }
 
 .gp-section h2 {
@@ -262,6 +262,23 @@ textarea {
   width: min(100%, 34rem);
   height: auto;
   justify-self: end;
+}
+
+.overview-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(320px, 430px);
+  align-items: start;
+  column-gap: clamp(2rem, 8vw, 10rem);
+  row-gap: 1.5rem;
+  margin-bottom: 2.2rem;
+}
+
+.overview-layout > div {
+  max-width: 24rem;
+}
+
+.overview-layout h2 {
+  max-width: 8ch;
 }
 
 .gp-link,
@@ -447,7 +464,7 @@ textarea {
 }
 
 .hero-summary {
-  max-width: 38rem;
+  max-width: 46rem;
   font-size: clamp(1.08rem, 2vw, 1.26rem);
   color: rgba(255, 248, 233, 0.82);
 }
@@ -516,9 +533,9 @@ textarea {
 }
 
 .clients {
-  margin-top: 0;
-  padding-top: 1.8rem;
-  padding-bottom: 1.8rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 245, 223, 0.16);
 }
 
 .clients-title {
@@ -528,6 +545,10 @@ textarea {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.gp-hero .clients-title {
+  color: rgba(255, 236, 196, 0.72);
 }
 
 .clients-marquee {
@@ -880,6 +901,16 @@ textarea {
   .section-heading {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .overview-layout {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .overview-layout > div,
+  .overview-layout h2 {
+    max-width: none;
   }
 
   .overview-graphic {
