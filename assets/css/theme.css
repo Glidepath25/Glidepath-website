@@ -506,6 +506,62 @@ textarea {
     linear-gradient(180deg, rgba(255, 253, 247, 0.96), rgba(251, 247, 240, 0.96));
 }
 
+.clients {
+  margin-top: 0;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+}
+
+.clients-title {
+  margin-bottom: 1.25rem;
+  color: rgba(101, 95, 83, 0.78);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.clients-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 0.4rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.clients-track {
+  display: flex;
+  align-items: center;
+  gap: 3.75rem;
+  width: max-content;
+  animation: clients-scroll 25s linear infinite;
+}
+
+.clients-track img {
+  width: auto;
+  height: 40px;
+  max-width: 160px;
+  object-fit: contain;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.clients-track img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: translateY(-1px);
+}
+
+@keyframes clients-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .capability-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -826,6 +882,15 @@ textarea {
   .quote-grid,
   .gp-form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .clients-track {
+    gap: 2.25rem;
+  }
+
+  .clients-track img {
+    height: 30px;
+    max-width: 120px;
   }
 
   .gp-btn,

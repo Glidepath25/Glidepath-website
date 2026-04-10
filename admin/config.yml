@@ -47,6 +47,12 @@ collections:
               - {label: "Eyebrow", name: "eyebrow", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Body", name: "body", widget: "text"}
+          - label: "Client Logos"
+            name: "client_logos"
+            widget: "list"
+            summary: "{{fields.logo}}"
+            fields:
+              - {label: "Logo", name: "logo", widget: "image", choose_url: false}
           - label: "Service cards"
             name: "services"
             widget: "list"
