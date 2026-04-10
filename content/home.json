@@ -33,7 +33,7 @@
   "overview": {
     "eyebrow": "What we do",
     "title": "Commercially grounded support across delivery, governance and digital tools.",
-    "body": " ."
+    "body": "1112"
   },
   "services": [
     {
@@ -57,14 +57,14 @@
       "body": "Bring permits, field activity, evidence and live works together in a single operational view for delivery and leadership teams."
     },
     {
-      "label": "Compliance",
-      "title": "GeoProx and SWUK risk workflows",
-      "body": "Automate desktop proximity checks, site assessments and supporting records in a process that is faster to run and easier to audit."
-    },
-    {
       "label": "Assurance",
       "title": "Independent review and performance improvement",
       "body": "Assess delivery health, identify risk and define practical interventions when programmes need stronger structure, pace or accountability."
+    },
+    {
+      "label": "Compliance",
+      "title": "GeoProx and SWUK risk workflows",
+      "body": "Automate desktop proximity checks, site assessments and supporting records in a process that is faster to run and easier to audit."
     }
   ],
   "partnership": {
@@ -83,9 +83,9 @@
     "badges": [
       "Programme governance",
       "FTTP delivery",
-      "Street works compliance",
       "Operational software",
       "Commercial visibility",
+      "Street works compliance",
       "Assurance reviews"
     ]
   },
@@ -110,7 +110,7 @@
   "cta": {
     "eyebrow": "Talk to Glidepath",
     "title": "If you need stronger control across a live utility programme, start with the operating model and the information flow.",
-    "body": "Use this section for a concise business development message. It is fully editable in the CMS, so you can change the pitch without touching the template.",
+    "body": " ",
     "label": "Get in touch today",
     "href": "#contact"
   },
