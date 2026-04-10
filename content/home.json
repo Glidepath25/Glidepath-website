@@ -1,11 +1,11 @@
 {
   "hero": {
     "checklist": [
-      "Programme mobilisation and operating model support",
-      "Reporting, assurance and risk control for live delivery",
-      "Practical systems that replace spreadsheets and disconnected workflows"
+      "Mobilise programmes quickly with proven operating models",
+      "Real-time reporting, assurance and risk control for live delivery",
+      "Replace spreadsheets with structured, scalable delivery systems"
     ],
-    "summary": "Glidepath combines delivery consultancy with practical software products for telecoms and utility contractors. We help teams plan, control and improve network build programmes without adding management overhead.",
+    "summary": "Glidepath combines delivery consultancy with practical software products for telecoms and utility contractors. We help teams plan, control and improve network build programmes without adding management overhead.\n\nHelping teams deliver faster, with greater control and reduced delivery risk.",
     "primary_href": "#contact",
     "secondary_label": "View consultancy and software",
     "eyebrow": "Advisory and software for utility delivery",
@@ -13,27 +13,27 @@
     "primary_label": "Start a conversation",
     "title": "Clarity for complex programmes, from mobilisation to live operations.",
     "panel_label": "Where we help",
-    "panel_title": "Built for regulated, delivery-heavy environments.",
-    "panel_body": "Glidepath supports operators, investors, and program leaders at the point where fiber deployment becomes real; establishing the structure, processes and controls required to deliver at scale.\n\nWe have proven experience across client organisations and Tier 1 contractors — we understand delivery from both sides.",
+    "panel_title": "Built for regulated, high-pressure delivery programmes",
+    "panel_body": "Glidepath supports operators, investors and delivery partners at the point where fibre deployment becomes real — combining experience from both client-side organisations and Tier 1 contractors to bring structure, control and delivery confidence at scale.",
     "stats": [
       {
-        "value": "Fibre",
-        "label": "deployment focus"
+        "value": "Fibre Delivery",
+        "label": "End-to-end programme support"
       },
       {
-        "value": "SWUK",
-        "label": "aligned workflows"
+        "value": "Operational Control",
+        "label": "Live visibility, reporting and assurance"
       },
       {
-        "value": "Live",
-        "label": "operational control"
+        "value": "Highway Authority Compliance",
+        "label": "Aligned workflows and assurance"
       }
     ]
   },
   "overview": {
     "eyebrow": "What we do",
     "title": "Commercially grounded support across delivery, governance and digital tools.",
-    "body": "The site is now structured like a proper brochure platform: a strong opening statement, clear capability cards, social proof and direct calls to action. Everything below can be edited in the CMS without touching code."
+    "body": "The site is now structured like a proper brochure platform: a strong opening statement, clear capability cards, social proof and direct calls to action."
   },
   "services": [
     {
