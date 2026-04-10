@@ -258,6 +258,12 @@ textarea {
   font-size: 1.08rem;
 }
 
+.overview-graphic {
+  width: min(100%, 34rem);
+  height: auto;
+  justify-self: end;
+}
+
 .gp-link,
 .gp-link-inline {
   color: var(--forest);
@@ -809,6 +815,10 @@ textarea {
   .section-heading {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .overview-graphic {
+    justify-self: start;
   }
 
   .hero-stats,
