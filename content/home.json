@@ -1,0 +1,130 @@
+{
+  "hero": {
+    "eyebrow": "Advisory and software for utility delivery",
+    "title": "Clarity for complex programmes, from mobilisation to live operations.",
+    "summary": "Glidepath combines delivery consultancy with practical software products for telecoms and utility contractors. We help teams plan, control and improve network build programmes without adding management overhead.",
+    "primary_label": "Start a conversation",
+    "primary_href": "#contact",
+    "secondary_label": "View consultancy and software",
+    "secondary_href": "/services.html",
+    "panel_label": "Where we help",
+    "panel_title": "Built for regulated, delivery-heavy environments.",
+    "panel_body": "Use Glidepath when programme teams need stronger governance, cleaner reporting, sharper operational visibility and more reliable execution across fibre and utility works.",
+    "checklist": [
+      "Programme mobilisation and operating model support",
+      "Reporting, assurance and risk control for live delivery",
+      "Practical systems that replace spreadsheets and disconnected workflows"
+    ],
+    "stats": [
+      {
+        "value": "Fibre",
+        "label": "deployment focus"
+      },
+      {
+        "value": "SWUK",
+        "label": "aligned workflows"
+      },
+      {
+        "value": "Live",
+        "label": "operational control"
+      }
+    ]
+  },
+  "overview": {
+    "eyebrow": "What we do",
+    "title": "Commercially grounded support across delivery, governance and digital tools.",
+    "body": "The site is now structured like a proper brochure platform: a strong opening statement, clear capability cards, social proof and direct calls to action. Everything below can be edited in the CMS without touching code."
+  },
+  "services": [
+    {
+      "label": "Consultancy",
+      "title": "Programme and portfolio leadership",
+      "body": "Set up delivery structures, governance rhythms and recovery plans for network build programmes that need clear ownership and control."
+    },
+    {
+      "label": "Operating models",
+      "title": "Target operating model design",
+      "body": "Define the roles, controls and handoffs needed across planning, build, assurance and close-out so teams can scale without losing grip."
+    },
+    {
+      "label": "Commercial control",
+      "title": "Resource and productivity planning",
+      "body": "Model resources, benchmark productivity and improve forecasting so delivery teams can spot strain before it turns into commercial pain."
+    },
+    {
+      "label": "Software",
+      "title": "Operational management through Glidepath",
+      "body": "Bring permits, field activity, evidence and live works together in a single operational view for delivery and leadership teams."
+    },
+    {
+      "label": "Compliance",
+      "title": "GeoProx and SWUK risk workflows",
+      "body": "Automate desktop proximity checks, site assessments and supporting records in a process that is faster to run and easier to audit."
+    },
+    {
+      "label": "Assurance",
+      "title": "Independent review and performance improvement",
+      "body": "Assess delivery health, identify risk and define practical interventions when programmes need stronger structure, pace or accountability."
+    }
+  ],
+  "partnership": {
+    "eyebrow": "One joined-up team",
+    "title": "Advisory thinking backed by delivery reality.",
+    "summary": "Rather than separating strategic advice from operational execution, Glidepath is positioned as a partner for teams that need both. The section below is editable so you can keep refining the message as the business develops.",
+    "link_label": "Explore the service detail",
+    "link_href": "/services.html",
+    "panel_title": "Typical engagement themes",
+    "points": [
+      "Mobilising new programmes and frameworks",
+      "Improving reporting, assurance and governance",
+      "Reducing operational friction between office and field teams",
+      "Introducing digital controls without disrupting delivery"
+    ],
+    "badges": [
+      "Programme governance",
+      "FTTP delivery",
+      "Street works compliance",
+      "Operational software",
+      "Commercial visibility",
+      "Assurance reviews"
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "What clients value",
+    "title": "A stronger mix of industry context, practical control and usable systems.",
+    "items": [
+      {
+        "quote": "Glidepath brings structure to complicated delivery environments and keeps the focus on what needs to happen operationally, not just what sounds good in reporting packs.",
+        "attribution": "Programme delivery perspective"
+      },
+      {
+        "quote": "The combination of consultancy support and product thinking is useful because it closes the gap between recommendations and the tools teams need to run the work properly.",
+        "attribution": "Operations and governance perspective"
+      },
+      {
+        "quote": "The messaging now reads more like an established advisory business: clearer capability areas, better section hierarchy and stronger calls to action.",
+        "attribution": "Website positioning perspective"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Talk to Glidepath",
+    "title": "If you need stronger control across a live utility programme, start with the operating model and the information flow.",
+    "body": "Use this section for a concise business development message. It is fully editable in the CMS, so you can change the pitch without touching the template.",
+    "label": "Get in touch today",
+    "href": "#contact"
+  },
+  "contact": {
+    "title": "Tell us where the delivery friction is.",
+    "body": "Share the programme stage, current pain points and whether you need consultancy support, software, or both. The form remains wired into Netlify.",
+    "email_label": "Email directly",
+    "email": "admin@glidepathsolutions.co.uk",
+    "card_title": "Typical starting points",
+    "card_points": [
+      "New contract or programme mobilisation",
+      "Reporting and governance gaps",
+      "Permit, field or compliance process issues",
+      "Need for better software support across live works"
+    ]
+  }
+}

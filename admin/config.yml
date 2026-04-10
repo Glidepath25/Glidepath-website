@@ -7,6 +7,107 @@ media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
 
 collections:
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - name: "home"
+        label: "Homepage Content"
+        file: "content/home.json"
+        description: "Editable homepage sections used by the main landing page."
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Summary", name: "summary", widget: "text"}
+              - {label: "Primary button label", name: "primary_label", widget: "string"}
+              - {label: "Primary button link", name: "primary_href", widget: "string"}
+              - {label: "Secondary button label", name: "secondary_label", widget: "string"}
+              - {label: "Secondary button link", name: "secondary_href", widget: "string"}
+              - {label: "Panel label", name: "panel_label", widget: "string"}
+              - {label: "Panel title", name: "panel_title", widget: "string"}
+              - {label: "Panel body", name: "panel_body", widget: "text"}
+              - label: "Checklist"
+                name: "checklist"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                summary: "{{fields.value}} - {{fields.label}}"
+                fields:
+                  - {label: "Value", name: "value", widget: "string"}
+                  - {label: "Label", name: "label", widget: "string"}
+          - label: "Overview"
+            name: "overview"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Body", name: "body", widget: "text"}
+          - label: "Service cards"
+            name: "services"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Body", name: "body", widget: "text"}
+          - label: "Partnership section"
+            name: "partnership"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Summary", name: "summary", widget: "text"}
+              - {label: "Link label", name: "link_label", widget: "string"}
+              - {label: "Link href", name: "link_href", widget: "string"}
+              - {label: "Panel title", name: "panel_title", widget: "string"}
+              - label: "Panel points"
+                name: "points"
+                widget: "list"
+                field: {label: "Point", name: "point", widget: "string"}
+              - label: "Badges"
+                name: "badges"
+                widget: "list"
+                field: {label: "Badge", name: "badge", widget: "string"}
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.attribution}}"
+                fields:
+                  - {label: "Quote", name: "quote", widget: "text"}
+                  - {label: "Attribution", name: "attribution", widget: "string"}
+          - label: "CTA band"
+            name: "cta"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Body", name: "body", widget: "text"}
+              - {label: "Button label", name: "label", widget: "string"}
+              - {label: "Button href", name: "href", widget: "string"}
+          - label: "Contact section"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Body", name: "body", widget: "text"}
+              - {label: "Email label", name: "email_label", widget: "string"}
+              - {label: "Email address", name: "email", widget: "string"}
+              - {label: "Card title", name: "card_title", widget: "string"}
+              - label: "Card points"
+                name: "card_points"
+                widget: "list"
+                field: {label: "Point", name: "point", widget: "string"}
   - name: "updates"
     label: "Updates / Blog"
     label_singular: "Update"
