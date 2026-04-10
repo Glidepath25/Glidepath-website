@@ -35,7 +35,26 @@
     "title": "Commercially grounded support across delivery, governance and digital tools.",
     "body": "1112"
   },
-  "client_logos": [],
+  "client_logos": [
+    {
+      "logo": "/assets/img/uploads/dalmoy-logo.jpg"
+    },
+    {
+      "logo": "/assets/img/uploads/bethell-logo.png"
+    },
+    {
+      "logo": "/assets/img/uploads/fibrus-logo.png"
+    },
+    {
+      "logo": "/assets/img/uploads/vo-logo.png"
+    },
+    {
+      "logo": "/assets/img/uploads/entegro-logo.png"
+    },
+    {
+      "logo": "/assets/img/uploads/vm-logo.png"
+    }
+  ],
   "services": [
     {
       "label": "Consultancy",
