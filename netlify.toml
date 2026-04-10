@@ -11,18 +11,6 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
 
 [[redirects]]
-  from = "http://www.glidepathsolutions.co.uk/*"
-  to = "https://glidepathsolutions.co.uk/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://glidepathsolutions.co.uk/*"
-  to = "https://glidepathsolutions.co.uk/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "https://www.glidepathsolutions.co.uk/*"
   to = "https://glidepathsolutions.co.uk/:splat"
   status = 301
