@@ -8,66 +8,23 @@
     "items": [
       {
         "title": "Programme & Project Management",
-        "body": "Set up and run build programmes with governance, cadence and recovery planning."
+        "body": "Establish and lead build programmes through structured governance, reporting cadence and delivery controls. Provide programme oversight, stakeholder management and recovery planning to keep complex deployments on track and aligned to strategic objectives."
       },
       {
         "title": "Tender Schedules & Resource Planning",
-        "body": "Draft programme schedules for bids, model field resource needs (civils & fibre)."
+        "body": "Develop end-to-end programme schedules to support bids and delivery planning, defining detailed resource requirements across field, supervisory and back-office functions. Build robust mobilisation plans aligned to programme scale, pace and delivery strategy."
       },
       {
         "title": "Target Operating Models",
-        "body": "Define roles, processes and controls for scalable delivery."
+        "body": "Design scalable operating models through detailed process workshops, mapping end-to-end delivery workflows, interdependencies, ownership and controls. Identify process gaps, bottlenecks and opportunities for efficiency gains to create streamlined, scalable delivery frameworks."
       },
       {
         "title": "Risk & Mitigations",
-        "body": "Structured risk identification, tracking and response across projects."
+        "body": "Implement structured risk identification, assessment and mitigation frameworks across programmes and projects. Establish clear ownership, escalation routes and tracking mechanisms to proactively manage delivery risks, minimise disruption and improve decision-making."
       },
       {
         "title": "Deployment Advisory",
-        "body": "Independent guidance on FTTP rollout best practice and performance."
-      }
-    ]
-  },
-  "software": {
-    "title": "Software Products",
-    "items": [
-      {
-        "title": "Glidepath - Operational management platform",
-        "summary": "Glidepath is an operational and project management platform that gives full visibility and control of live utility works.",
-        "capabilities_heading": "Key capabilities include:",
-        "capabilities": [
-          "Issuing job packs and work instructions directly to field teams",
-          "End-to-end permit management linked to Street Manager",
-          "GIS integration for planning, live progress and historical records",
-          "Real-time tracking of works, delays, risks and key milestones",
-          "Capture of site evidence, photos and QA records",
-          "Improved coordination of traffic management, crews and resources"
-        ],
-        "closing": "Glidepath replaces spreadsheets and disconnected tools with a single operational view - helping teams reduce delays, minimise FPNs and improve delivery certainty.",
-        "primary_label": "Request a demo",
-        "primary_href": "/#contact",
-        "poster": "/assets/img/uploads/logo.png",
-        "video_src": "/assets/video/glidepath-demo.mp4"
-      },
-      {
-        "title": "GeoProx - SWUK risk assessment platform",
-        "summary": "GeoProx is a SWUK-aligned risk assessment platform designed to simplify and automate compliance.",
-        "capabilities_heading": "Key capabilities include:",
-        "capabilities": [
-          "Automated desktop proximity risk assessments",
-          "Digital site risk assessments and inspections",
-          "Permit document storage and audit-ready records",
-          "Sampling regime management and results capture",
-          "Exportable reports and PDFs for authority submissions",
-          "Mobile-friendly tools for field teams"
-        ],
-        "closing": "GeoProx reduces administrative burden while ensuring consistent, compliant risk management across all works - supporting safer delivery and clearer audit trails.",
-        "primary_label": "Ask about GeoProx",
-        "primary_href": "/#contact",
-        "secondary_label": "Visit geoprox.co.uk",
-        "secondary_href": "https://geoprox.co.uk",
-        "poster": "/assets/img/uploads/logo.png",
-        "video_src": "/assets/video/geoprox-demo.mp4"
+        "body": "Provide independent advisory support on FTTP deployment strategy, delivery models and best practice. Leverage experience from large-scale fibre programmes to improve performance, optimise contractor management and enhance delivery outcomes."
       }
     ]
   }
