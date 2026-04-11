@@ -837,8 +837,46 @@ textarea {
   gap: 0.7rem;
 }
 
+.blog-card-summary.is-collapsed {
+  position: relative;
+  max-height: 13rem;
+  overflow: hidden;
+}
+
+.blog-card-summary.is-collapsed::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3.2rem;
+  background: linear-gradient(180deg, rgba(255, 251, 243, 0), rgba(255, 251, 243, 0.96));
+  pointer-events: none;
+}
+
 .blog-card-summary p {
   color: var(--muted);
+}
+
+.blog-card-toggle {
+  align-self: flex-start;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ochre);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.blog-card-toggle:hover,
+.blog-card-toggle:focus-visible {
+  color: #8a631f;
+}
+
+.blog-card .gp-section-footer {
+  margin-top: auto;
+  padding-top: 0.2rem;
 }
 
 .gp-section-footer {

@@ -318,6 +318,49 @@
       return `<div class="blog-card-image"${widthStyle}><img src="${escapeAttr(post.image)}" alt="${escapeAttr(post.title || 'Update image')}"></div>`;
     };
 
+    const setupBlogCardToggle = (card, index) => {
+      const summary = card.querySelector('.blog-card-summary');
+      if (!summary) return;
+
+      summary.id = `blog-card-summary-${index}`;
+      summary.classList.add('is-collapsed');
+
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'blog-card-toggle';
+      toggle.hidden = true;
+      toggle.setAttribute('aria-controls', summary.id);
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Show more';
+
+      const footer = card.querySelector('.gp-section-footer');
+      if (footer) {
+        footer.before(toggle);
+      } else {
+        card.appendChild(toggle);
+      }
+
+      const updateToggleState = () => {
+        const expanded = !summary.classList.contains('is-collapsed');
+        toggle.textContent = expanded ? 'Show less' : 'Show more';
+        toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      };
+
+      if (summary.scrollHeight <= summary.clientHeight + 4) {
+        summary.classList.remove('is-collapsed');
+        toggle.remove();
+        return;
+      }
+
+      toggle.hidden = false;
+      updateToggleState();
+
+      toggle.addEventListener('click', () => {
+        summary.classList.toggle('is-collapsed');
+        updateToggleState();
+      });
+    };
+
     const slugify = (str = '') => (str || '').toLowerCase().trim()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-+|-+$/g, '')
@@ -481,7 +524,7 @@
           return;
         }
 
-        posts.forEach((post) => {
+        posts.forEach((post, index) => {
           const card = document.createElement('article');
           card.className = 'blog-card';
           const summaryMarkup = formatSummary(post.summary || '');
@@ -497,6 +540,7 @@
               ${post.link ? `<a class="gp-btn gp-btn-outline gp-btn-small" href="${escapeAttr(post.link)}" target="_blank" rel="noopener">View source</a>` : ''}
             </div>`;
           container.appendChild(card);
+          setupBlogCardToggle(card, index);
         });
       })
       .catch(() => {
