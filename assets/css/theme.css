@@ -935,12 +935,30 @@ textarea {
 @media (max-width: 820px) {
   .gp-header {
     width: calc(100% - 24px);
+    position: static;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
   }
 
   .gp-nav {
     width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.15rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gp-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gp-nav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 
   .gp-main {
@@ -1001,12 +1019,33 @@ textarea {
     flex-direction: column;
     align-items: stretch;
   }
+
+  .gp-header .gp-btn,
+  .gp-header .gp-btn-outline,
+  .gp-header button.gp-btn {
+    width: auto;
+  }
 }
 
 @media (max-width: 560px) {
+  .gp-header {
+    margin-top: 0.75rem;
+    border-radius: 20px;
+  }
+
+  .gp-header-title {
+    gap: 0.7rem;
+    font-size: 0.98rem;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+  }
+
   .gp-nav a {
-    width: 100%;
-    text-align: center;
+    padding: 0.65rem 0.8rem;
   }
 
   .gp-section h1 {
