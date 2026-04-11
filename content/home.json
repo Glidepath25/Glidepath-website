@@ -130,6 +130,13 @@
   "cta": {
     "eyebrow": "Talk to Glidepath",
     "title": "If you need stronger control across a live utility programme, start with the operating model and the information flow.",
+    "checklist": [
+      "Mobilization - establishing delivery models, governance and controls",
+      "Design and planning - ensuring readiness, standards and scalability",
+      "Construction and deployment - managing throughput, resources and field performance",
+      "Commissioning and handover - aligning build completion with activation",
+      "Operational transition - ensuring a smooth move into live operations"
+    ],
     "body": " ",
     "label": "Get in touch today",
     "href": "#contact"

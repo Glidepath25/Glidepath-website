@@ -176,7 +176,7 @@
         <div class="cta-band-copy">
           <p class="section-kicker" id="ctaEyebrow">Talk to Glidepath</p>
           <h2 id="ctaTitle">If you need stronger control across a live utility programme, start with the operating model and the information flow.</h2>
-          <ul class="check-list">
+          <ul class="check-list" id="ctaChecklist">
             <li>Mobilization - establishing delivery models, governance and controls</li>
             <li>Design and planning - ensuring readiness, standards and scalability</li>
             <li>Construction and deployment - managing throughput, resources and field performance</li>
@@ -452,6 +452,7 @@
         setText('ctaEyebrow', cta.eyebrow);
         setText('ctaTitle', cta.title);
         setText('ctaBody', cta.body);
+        renderSimpleList('ctaChecklist', cta.checklist);
         setLink('ctaLink', cta.label, cta.href);
       }
 

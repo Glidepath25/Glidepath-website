@@ -99,6 +99,10 @@ collections:
               - {label: "Eyebrow", name: "eyebrow", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Body", name: "body", widget: "text"}
+              - label: "Checklist"
+                name: "checklist"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
               - {label: "Button label", name: "label", widget: "string"}
               - {label: "Button href", name: "href", widget: "string"}
           - label: "Contact section"
