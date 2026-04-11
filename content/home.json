@@ -1,4 +1,12 @@
 {
+  "section_order": [
+    "services",
+    "partnership",
+    "testimonials",
+    "updates",
+    "cta",
+    "contact"
+  ],
   "hero": {
     "checklist": [
       "Mobilise programmes quickly with proven operating models",

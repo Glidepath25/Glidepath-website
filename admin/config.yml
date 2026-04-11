@@ -15,6 +15,21 @@ collections:
         file: "content/home.json"
         description: "Editable homepage sections used by the main landing page."
         fields:
+          - label: "Homepage section order"
+            name: "section_order"
+            widget: "list"
+            hint: "Drag to reorder the main homepage sections shown after the hero."
+            field:
+              label: "Section"
+              name: "section"
+              widget: "select"
+              options:
+                - { label: "Overview and service cards", value: "services" }
+                - { label: "Partnership section", value: "partnership" }
+                - { label: "Testimonials", value: "testimonials" }
+                - { label: "Latest updates", value: "updates" }
+                - { label: "CTA band", value: "cta" }
+                - { label: "Contact section", value: "contact" }
           - label: "Hero"
             name: "hero"
             widget: "object"

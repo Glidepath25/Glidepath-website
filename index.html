@@ -72,7 +72,7 @@
         </div>
       </section>
 
-      <section id="services" class="gp-section gp-story fade-in">
+      <section id="services" class="gp-section gp-story fade-in" data-home-section="services">
         <div class="overview-section-layout">
           <div class="overview-column">
             <div class="section-heading overview-layout">
@@ -118,7 +118,7 @@
         </div>
       </section>
 
-      <section class="gp-section gp-partnership fade-in">
+      <section class="gp-section gp-partnership fade-in" data-home-section="partnership">
         <div class="partnership-grid">
           <div>
             <p class="section-kicker" id="partnershipEyebrow">One joined-up team</p>
@@ -146,7 +146,7 @@
         </div>
       </section>
 
-      <section class="gp-section gp-testimonials fade-in">
+      <section class="gp-section gp-testimonials fade-in" data-home-section="testimonials">
         <div class="section-heading section-heading-center">
           <div>
             <p class="section-kicker" id="testimonialEyebrow">What clients value</p>
@@ -172,7 +172,7 @@
         </div>
       </section>
 
-      <section class="gp-section headerless fade-in">
+      <section class="gp-section headerless fade-in" data-home-section="updates">
         <div class="section-heading">
           <div>
             <p class="section-kicker">Latest updates</p>
@@ -186,7 +186,7 @@
         </div>
       </section>
 
-      <section class="gp-section gp-cta-band fade-in">
+      <section class="gp-section gp-cta-band fade-in" data-home-section="cta">
         <div class="cta-band-copy">
           <p class="section-kicker" id="ctaEyebrow">Talk to Glidepath</p>
           <h2 id="ctaTitle">If you need stronger control across a live utility programme, start with the operating model and the information flow.</h2>
@@ -203,7 +203,7 @@
         </div>
       </section>
 
-      <section id="contact" class="gp-section gp-contact fade-in">
+      <section id="contact" class="gp-section gp-contact fade-in" data-home-section="contact">
         <div class="contact-grid">
           <div>
             <div class="section-heading">
@@ -316,6 +316,31 @@
       if (!post.image) return '';
       const widthStyle = getImageWidthStyle(post.image_width);
       return `<div class="blog-card-image"${widthStyle}><img src="${escapeAttr(post.image)}" alt="${escapeAttr(post.title || 'Update image')}"></div>`;
+    };
+
+    const reorderHomeSections = (order = []) => {
+      if (!Array.isArray(order) || !order.length) return;
+      const container = document.querySelector('.gp-main.gp-home');
+      if (!container) return;
+
+      const sections = Array.from(container.querySelectorAll('[data-home-section]'));
+      const sectionMap = new Map(sections.map((section) => [section.dataset.homeSection, section]));
+      const orderedKeys = [];
+
+      order.forEach((key) => {
+        if (typeof key !== 'string' || !sectionMap.has(key) || orderedKeys.includes(key)) return;
+        orderedKeys.push(key);
+      });
+
+      sections.forEach((section) => {
+        const key = section.dataset.homeSection;
+        if (!orderedKeys.includes(key)) orderedKeys.push(key);
+      });
+
+      orderedKeys.forEach((key) => {
+        const section = sectionMap.get(key);
+        if (section) container.appendChild(section);
+      });
     };
 
     const setupBlogCardToggle = (card, index) => {
@@ -451,7 +476,9 @@
     };
 
     const applyHomeContent = (data = {}) => {
-      const { hero, overview, client_logos, services, partnership, testimonials, cta, contact } = data;
+      const { section_order, hero, overview, client_logos, services, partnership, testimonials, cta, contact } = data;
+
+      reorderHomeSections(section_order);
 
       if (hero) {
         setText('heroEyebrow', hero.eyebrow);

@@ -457,6 +457,10 @@ textarea {
   color: rgba(255, 248, 233, 0.78);
 }
 
+.post-hero h1 {
+  max-width: none;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(420px, 1fr);
