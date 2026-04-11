@@ -172,3 +172,27 @@ collections:
                 fields:
                   - {label: "Title", name: "title", widget: "string"}
                   - {label: "Body", name: "body", widget: "text"}
+          - label: "Software section"
+            name: "software"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Products"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Summary", name: "summary", widget: "text"}
+                  - {label: "Capabilities heading", name: "capabilities_heading", widget: "string"}
+                  - label: "Capabilities"
+                    name: "capabilities"
+                    widget: "list"
+                    field: {label: "Capability", name: "capability", widget: "string"}
+                  - {label: "Closing paragraph", name: "closing", widget: "text"}
+                  - {label: "Primary button label", name: "primary_label", widget: "string", required: false}
+                  - {label: "Primary button link", name: "primary_href", widget: "string", required: false}
+                  - {label: "Secondary button label", name: "secondary_label", widget: "string", required: false}
+                  - {label: "Secondary button link", name: "secondary_href", widget: "string", required: false}
+                  - {label: "Poster image", name: "poster", widget: "image", choose_url: false, required: false}
+                  - {label: "Video path", name: "video_src", widget: "string", required: false}

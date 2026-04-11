@@ -52,8 +52,8 @@
       </section>
 
             <section id="software" class="gp-section">
-        <h2>Software Products</h2>
-        <div class="gp-grid cols-1">
+        <h2 id="softwareTitle">Software Products</h2>
+        <div class="gp-grid cols-1" id="softwareGrid">
           <article class="gp-card">
             <div class="gp-card-content" style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:1.5rem;align-items:center;">
               <div>
@@ -126,10 +126,19 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
 
+    const escapeAttr = (str = '') => escapeHtml(str);
+
     const setText = (id, value) => {
       if (!value) return;
       const element = document.getElementById(id);
       if (element) element.textContent = value;
+    };
+
+    const isExternalHref = (href = '') => /^https?:\/\//i.test(href);
+
+    const renderSimpleList = (items = []) => {
+      if (!Array.isArray(items) || !items.length) return '';
+      return items.map((item) => `<li>${escapeHtml(item)}</li>`).join('');
     };
 
     const renderConsultancyCards = (items = []) => {
@@ -143,8 +152,51 @@
         </article>`).join('');
     };
 
+    const renderSoftwareProducts = (items = []) => {
+      if (!Array.isArray(items) || !items.length) return;
+      const element = document.getElementById('softwareGrid');
+      if (!element) return;
+
+      element.innerHTML = items.map((item) => {
+        const primaryButton = item.primary_label && item.primary_href
+          ? `<a class="gp-btn gp-btn-outline" href="${escapeAttr(item.primary_href)}">${escapeHtml(item.primary_label)}</a>`
+          : '';
+        const secondaryButton = item.secondary_label && item.secondary_href
+          ? `<a class="gp-btn" href="${escapeAttr(item.secondary_href)}"${isExternalHref(item.secondary_href) ? ' target="_blank" rel="noopener"' : ''}>${escapeHtml(item.secondary_label)}</a>`
+          : '';
+        const media = item.video_src
+          ? `<div class="gp-card-media">
+                <video class="gp-card-video" controls preload="none"${item.poster ? ` poster="${escapeAttr(item.poster)}"` : ''}>
+                  <source src="${escapeAttr(item.video_src)}" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>`
+          : '';
+
+        return `
+          <article class="gp-card">
+            <div class="gp-card-content" style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:1.5rem;align-items:center;">
+              <div>
+                <h3>${escapeHtml(item.title || '')}</h3>
+                <p>${escapeHtml(item.summary || '')}</p>
+                <p><strong>${escapeHtml(item.capabilities_heading || '')}</strong></p>
+                <ul>
+                  ${renderSimpleList(item.capabilities)}
+                </ul>
+                <p>${escapeHtml(item.closing || '')}</p>
+                <div class="gp-card-footer">
+                  ${primaryButton}
+                  ${secondaryButton}
+                </div>
+              </div>
+              ${media}
+            </div>
+          </article>`;
+      }).join('');
+    };
+
     const applyServicesContent = (data = {}) => {
-      const { hero, consultancy } = data;
+      const { hero, consultancy, software } = data;
 
       if (hero) {
         setText('servicesHeroTitle', hero.title);
@@ -154,6 +206,11 @@
       if (consultancy) {
         setText('consultancyTitle', consultancy.title);
         renderConsultancyCards(consultancy.items);
+      }
+
+      if (software) {
+        setText('softwareTitle', software.title);
+        renderSoftwareProducts(software.items);
       }
     };
 
