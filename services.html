@@ -36,13 +36,13 @@
     
     <main class="gp-main">
       <section class="gp-section gp-hero">
-        <h1>Consultancy & Software</h1>
-        <p class="gp-muted">Specialist support for utility network delivery, backed by modern platforms.</p>
+        <h1 id="servicesHeroTitle">Consultancy & Software</h1>
+        <p class="gp-muted" id="servicesHeroSummary">Specialist support for utility network delivery, backed by modern platforms.</p>
       </section>
 
       <section id="consulting" class="gp-section headerless">
-        <h2>Consultancy Services</h2>
-        <div class="gp-grid cols-2">
+        <h2 id="consultancyTitle">Consultancy Services</h2>
+        <div class="gp-grid cols-2" id="consultancyGrid">
           <article class="gp-card"><h3>Programme & Project Management</h3><p>Set up and run build programmes with governance, cadence and recovery planning.</p></article>
           <article class="gp-card"><h3>Tender Schedules & Resource Planning</h3><p>Draft programme schedules for bids, model field resource needs (civils & fibre).</p></article>
           <article class="gp-card"><h3>Target Operating Models</h3><p>Define roles, processes and controls for scalable delivery.</p></article>
@@ -118,5 +118,49 @@
     </footer>
     
   </div>
+  <script>
+    const escapeHtml = (str = '') => str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+
+    const setText = (id, value) => {
+      if (!value) return;
+      const element = document.getElementById(id);
+      if (element) element.textContent = value;
+    };
+
+    const renderConsultancyCards = (items = []) => {
+      if (!Array.isArray(items) || !items.length) return;
+      const element = document.getElementById('consultancyGrid');
+      if (!element) return;
+      element.innerHTML = items.map((item) => `
+        <article class="gp-card">
+          <h3>${escapeHtml(item.title || '')}</h3>
+          <p>${escapeHtml(item.body || '')}</p>
+        </article>`).join('');
+    };
+
+    const applyServicesContent = (data = {}) => {
+      const { hero, consultancy } = data;
+
+      if (hero) {
+        setText('servicesHeroTitle', hero.title);
+        setText('servicesHeroSummary', hero.summary);
+      }
+
+      if (consultancy) {
+        setText('consultancyTitle', consultancy.title);
+        renderConsultancyCards(consultancy.items);
+      }
+    };
+
+    fetch('/content/services.json')
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error('services content unavailable')))
+      .then((data) => applyServicesContent(data))
+      .catch(() => {});
+  </script>
 </body>
 </html>

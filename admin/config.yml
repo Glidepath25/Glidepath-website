@@ -146,3 +146,29 @@ collections:
                 required: false
                 hint: "Optional: set a width between 10 and 100 to display the image narrower than full width."
               - {label: "LinkedIn or URL", name: "link", widget: "string"}
+  - name: "services_page"
+    label: "Services Page"
+    files:
+      - name: "services"
+        label: "Services Page Content"
+        file: "content/services.json"
+        description: "Editable content used by the consultancy and software page."
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Summary", name: "summary", widget: "text"}
+          - label: "Consultancy section"
+            name: "consultancy"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Cards"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Body", name: "body", widget: "text"}

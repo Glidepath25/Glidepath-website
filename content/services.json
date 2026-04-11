@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title": "Consultancy & Software",
+    "summary": "Specialist support for utility network delivery, backed by modern platforms."
+  },
+  "consultancy": {
+    "title": "Consultancy Services",
+    "items": [
+      {
+        "title": "Programme & Project Management",
+        "body": "Set up and run build programmes with governance, cadence and recovery planning."
+      },
+      {
+        "title": "Tender Schedules & Resource Planning",
+        "body": "Draft programme schedules for bids, model field resource needs (civils & fibre)."
+      },
+      {
+        "title": "Target Operating Models",
+        "body": "Define roles, processes and controls for scalable delivery."
+      },
+      {
+        "title": "Risk & Mitigations",
+        "body": "Structured risk identification, tracking and response across projects."
+      },
+      {
+        "title": "Deployment Advisory",
+        "body": "Independent guidance on FTTP rollout best practice and performance."
+      }
+    ]
+  }
+}
